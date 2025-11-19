@@ -28,4 +28,12 @@ public final class Controller {
         return this.currentFile;
     }
 
+    /**
+     * Returns the path of the current file.
+     * 
+     * @return the string path of the current file
+     */
+    public String getPath() {
+        return this.currentFile.getPath();
+    }
 }
