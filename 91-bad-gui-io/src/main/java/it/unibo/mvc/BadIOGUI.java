@@ -55,6 +55,12 @@ public class BadIOGUI {
         panel.add(write);
 
         /*
+         * Part 2
+         */
+        final JButton read = new JButton("Read");
+        panel.add(read);
+
+        /*
          * Handlers
          */
         write.addActionListener(new ActionListener() {
@@ -73,6 +79,13 @@ public class BadIOGUI {
                     JOptionPane.showMessageDialog(frame, e, "Error", JOptionPane.ERROR_MESSAGE);
                     e.printStackTrace(); // NOPMD: allowed as this is just an exercise
                 }
+            }
+        });
+
+        read.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                System.out.println("Button Read pressed"); //NOPMD
             }
         });
     }
