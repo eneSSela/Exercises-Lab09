@@ -1,6 +1,9 @@
 package it.unibo.mvc;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Application controller. Performs the I/O.
@@ -36,4 +39,25 @@ public final class Controller {
     public String getPath() {
         return this.currentFile.getPath();
     }
+
+    /**
+     * Sets a new file as the current file.
+     * 
+     * @param file the file to be set as current
+     */
+    public void setCurrentFile(final File file) {
+        this.currentFile = file;
+    }
+
+    /**
+     * Saves the specified content into the current file using UTF-8 encoding.
+     * 
+     * @param content the text to be saved
+     * @throws IOException if something goes wrong during writing
+     */
+    public void save(final String content) throws IOException {
+        try (PrintStream ps = new PrintStream(this.currentFile, StandardCharsets.UTF_8)) {
+            ps.print(content);
+        }
+    } 
 }
