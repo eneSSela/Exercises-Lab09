@@ -86,4 +86,11 @@ public final class SimpleGUI {
         */
         frame.setVisible(true);
     }
+
+    /**
+     * Main method that starts the graphical application
+     */
+    public static void main(final String[] args) {
+        new SimpleGUI().display();
+    }
 }
