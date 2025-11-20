@@ -12,14 +12,14 @@ public final class SimpleController implements Controller {
     private final List<String> history;
 
     /**
-     * Builds a Controller with an empty history
+     * Builds a Controller with an empty history.
      */
     public SimpleController() {
         this.history = new ArrayList<>();
     }
 
     @Override
-    public void setNextString(String s) {
+    public void setNextString(final String s) {
         if (s == null) {
             throw new IllegalStateException("String cannot be null");
         }
