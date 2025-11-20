@@ -118,4 +118,10 @@ public final class SimpleGUIWithFileChooser {
         frame.setVisible(true);
     }
 
+    /**
+     * Main method that starts the graphical application
+     */
+    public static void main(final String[] args) {
+        new SimpleGUIWithFileChooser().display();
+    }
 }
