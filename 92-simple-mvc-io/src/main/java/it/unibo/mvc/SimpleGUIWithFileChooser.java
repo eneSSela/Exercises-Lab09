@@ -25,6 +25,9 @@ public final class SimpleGUIWithFileChooser {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame("Simple GUI with FileChooser");
 
+    /**
+     * Builds the whole graphical interface.
+     */
     public SimpleGUIWithFileChooser() {
 
         final JPanel northPanel = new JPanel(new BorderLayout());
@@ -58,7 +61,7 @@ public final class SimpleGUIWithFileChooser {
                 final JFileChooser fileChooser = new JFileChooser();
                 final int result = fileChooser.showSaveDialog(frame);
 
-                if(result == JFileChooser.APPROVE_OPTION) {
+                if (result == JFileChooser.APPROVE_OPTION) {
                     final File file = fileChooser.getSelectedFile();
                     controller.setCurrentFile(file);
                     textField.setText(controller.getPath());
@@ -74,7 +77,7 @@ public final class SimpleGUIWithFileChooser {
 
         save.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 try {
                     controller.save(text.getText());
                 } catch (final IOException ex) {
@@ -90,7 +93,7 @@ public final class SimpleGUIWithFileChooser {
     }
 
     /**
-     * Displays the main frame, resizing it proportionally to the screen
+     * Displays the main frame, resizing it proportionally to the screen.
      */
     private void display() {
         /*
@@ -113,13 +116,15 @@ public final class SimpleGUIWithFileChooser {
         frame.setLocationByPlatform(true);
         frame.pack();
         /*
-        * OK, ready to push the frame onscreen
+        * OK, ready to push the frame onscreen.
         */
         frame.setVisible(true);
     }
 
     /**
-     * Main method that starts the graphical application
+     * Main method that starts the graphical application.
+     * 
+     * @param args are ignores
      */
     public static void main(final String[] args) {
         new SimpleGUIWithFileChooser().display();

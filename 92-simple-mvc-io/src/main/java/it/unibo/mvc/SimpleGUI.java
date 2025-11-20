@@ -23,7 +23,7 @@ public final class SimpleGUI {
     private final JFrame frame = new JFrame("Simple GUI");
 
     /**
-     * Builds the whole graphical interface
+     * Builds the whole graphical interface.
      */
     public SimpleGUI() {
         final JPanel panelText = new JPanel();
@@ -59,7 +59,7 @@ public final class SimpleGUI {
     }
 
     /**
-     * Displays the main frame, resizing it proportionally to the screen
+     * Displays the main frame, resizing it proportionally to the screen.
      */
     private void display() {
         /*
@@ -88,7 +88,9 @@ public final class SimpleGUI {
     }
 
     /**
-     * Main method that starts the graphical application
+     * Main method that starts the graphical application.
+     * 
+     * @param args are ignored
      */
     public static void main(final String[] args) {
         new SimpleGUI().display();
