@@ -44,7 +44,7 @@ public final class SimpleGUI {
 
         save.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 try {
                     controller.save(text.getText());
                 } catch (final IOException ex) {
