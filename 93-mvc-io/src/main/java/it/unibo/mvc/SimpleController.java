@@ -35,4 +35,13 @@ public final class SimpleController implements Controller {
     public List<String> getHistory() {
         return new ArrayList<>(this.history);
     }
+
+    @Override
+    public void print() {
+        if (this.currentString == null) {
+            throw new IllegalStateException("No string set to print");
+        }
+        System.out.println(currentString); //NOPMD
+        this.history.add(currentString);
+    }
 }
