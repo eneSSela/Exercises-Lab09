@@ -25,4 +25,14 @@ public final class SimpleController implements Controller {
         }
         this.currentString = s;
     }
+
+    @Override
+    public String getNextString() {
+        return this.currentString;
+    }
+
+    @Override
+    public List<String> getHistory() {
+        return new ArrayList<>(this.history);
+    }
 }
